@@ -41,3 +41,31 @@ header button{
     border: 1px solid #D70900;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
+
+.logo-pequeno{
+    width: 255px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.logo-pequeno img{
+    width: 52px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.logo-pequeno h1{
+    width: 203.17px;
+    height: 44px;
+    font-family: 'Righteous';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    color: #ffffff;
+}
+
+.hidden{
+    display: none;
+}

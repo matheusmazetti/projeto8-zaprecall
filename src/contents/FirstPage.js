@@ -1,9 +1,10 @@
-export default function FirstPage(){
-    return(
-        <header>
+export default function FirstPage(props){
+    let {classHidden, callback} = props;
+    return( 
+        <header className={classHidden}>
             <img src="assets/logo.png" className="logo"/>
             <h1>ZapRecall</h1>
-            <button>Iniciar Recall!</button>
+            <button onClick={callback}>Iniciar Recall!</button>
         </header>
     )
 }

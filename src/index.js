@@ -1,10 +1,15 @@
 import ReactDOM from 'react-dom';
+import React from 'react';
 import FirstPage from './contents/FirstPage';
+import RecallPage from './contents/RecallPage';
 
 function App(){
+    const [hidden, setHidden] = React.useState('');
+    
     return(
         <>
-            <FirstPage />
+            <FirstPage classHidden={hidden} callback={() => setHidden('hidden')}/>
+            <RecallPage hidden="hidden"/>
         </>
     )
 }

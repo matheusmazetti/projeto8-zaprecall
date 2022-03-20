@@ -9,7 +9,7 @@ function App(){
     return(
         <>
             <FirstPage classHidden={hidden} callback={() => setHidden('hidden')}/>
-            <RecallPage hidden="hidden"/>
+            <RecallPage classHidden={(hidden === 'hidden')?'':'hidden'}/>
         </>
     )
 }

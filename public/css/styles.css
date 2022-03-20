@@ -66,6 +66,151 @@ header button{
     color: #ffffff;
 }
 
+.front{
+    width: 300px;
+    height: 65px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.front h1{
+    width: 87px;
+    height: 19px;
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    margin-left: 10px;
+    color: #333333;
+}
+
+.front button{
+    width: 20px;
+    height: 23px;
+    background: #ffffff;
+    border: 0px;
+    margin-right: 13px;
+}
+
+.open{
+    width: 299px;
+    height: 131px;
+    background: #FFFFD5;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.open h1{
+    width: 247px;
+    height: 22px;
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #333333;
+    position: absolute;
+    top: 18px;
+    left: 15px;
+    padding-right: 15px;
+}
+
+.open button{
+    border: 0px;
+    width: 30px;
+    height: 20px;
+    background: #FFFFD5;
+    position: absolute;
+    bottom: 6px;
+    right: 15px;
+}
+
+.back{
+    width: 299px;
+    height: 131px;
+    background: #FFFFD5;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.back h1{
+    position: absolute;
+    width: 247px;
+    height: 44px;
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    top: 18px;
+    left: 15px;
+}
+
+.amnesia{
+    width: 85.17px;
+    height: 37.17px;
+    border: 0px;
+    background: #FF3030;
+    border-radius: 5px;
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.almost{
+    width: 85.17px;
+    height: 37.17px;
+    border: 0px;
+    background: #FF922E;
+    border-radius: 5px;
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.zap{
+    width: 85.17px;
+    height: 37.17px;
+    border: 0px;
+    background: #2FBE34;
+    border-radius: 5px;
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.buttons{
+    width: 280px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+}
+
 .hidden{
     display: none;
 }

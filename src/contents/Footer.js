@@ -1,7 +1,9 @@
 function Icons(props){
     const {icons} = props;
     return(
-        <ion-icon className={icons} name={icons}></ion-icon>
+        <div className={icons}>
+            <ion-icon name={icons}></ion-icon>
+        </div>
     )
 }
 export default function Footer(props){

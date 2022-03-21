@@ -1,3 +1,5 @@
+import React from 'react'
+
 const zapObj =[{question:'O que é JSX?', answer:'Uma extensão de linguagem do JavaScript'},
 {question:'O React é __', answer:'uma biblioteca JavaScript para construção de interfaces'},
 {question:'Componentes devem iniciar com __', answer:'letra maiúscula'},
@@ -14,24 +16,28 @@ function shuffle(){
     }
 }
 
+
+
 function comparador(){
     return Math.random() - 0.5;
 }
 
 export default function RecallQuestions(){
-    shuffle();
-    let i = 1;
-    let questions = zapShuffle.map(zap => 
-        <div className="question">
-            <div className="front">
-                <h1>{`Pergunta ${i}`}</h1>
-                <button><img src="assets/Vector.png"/></button>
+    if(zapShuffle.length < 8){
+        shuffle();
+    }
+    const [sinal, setSinal] = React.useState([]);
+    let questions = zapShuffle.map((zap, index) => 
+        <div className="question" >
+            <div className={`front ${(sinal[1] === index)?((sinal[0] === 'front')?'':'hidden'):''}`}>
+                <h1>{`Pergunta ${index + 1}`}</h1>
+                <button onClick={() => setSinal(['open', index])}><img src="assets/Vector.png"/></button>
             </div>
-            <div className="open">
+            <div className={`open ${(sinal[1] === index)?((sinal[0] === 'open')?'':'hidden'):'hidden'}`}>
                 <h1>{zap.question}</h1>
-                <button><img src="assets/setinha.png"/></button>
+                <button onClick={() => setSinal(['back', index])}><img src="assets/setinha.png"/></button>
             </div>
-            <div className="back">
+            <div className={`back ${(sinal[1] === index)?((sinal[0] === 'back')?'':'hidden'):'hidden'}`}>
                 <h1>{zap.answer}</h1>
                 <div className="buttons">
                     <button className="amnesia">Não lembrei</button>

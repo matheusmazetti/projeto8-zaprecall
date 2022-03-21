@@ -23,7 +23,7 @@ function comparador(){
 }
 
 function Questions(props){
-    const { index, question, answer, callback } = props;
+    const { index, question, answer, callback, iconsCallback } = props;
     const [selected, setSelected] = React.useState('front');
     const [result, setResult] = React.useState('');
     const [icon, setIcon] = React.useState('play-outline');
@@ -45,16 +45,19 @@ function Questions(props){
                         setIcon('close-circle')
                         setSelected('front')
                         setResult('incorrect')
+                        iconsCallback('close-circle')
                         callback(1)}}>Não lembrei</button>
                     <button className='almost' onClick={() => {
                         setIcon('help-circle')
                         setSelected('front')
                         setResult('almost-correct')
+                        iconsCallback('help-circle')
                         callback(1)}}>Quase não lembrei</button>
                     <button className='zap' onClick={() => {
                         setIcon('checkmark-circle')
                         setSelected('front')
                         setResult('correct')
+                        iconsCallback('checkmark-circle')
                         callback(1)}}>Zap!</button>
                 </div>
             </div>
@@ -63,7 +66,7 @@ function Questions(props){
 }
 
 export default function RecallQuestions(props){
-    const { callback } = props
+    const { callback, iconsCallback } = props
     if(zapShuffle.length < 8){
         shuffle();
     }
@@ -80,6 +83,7 @@ export default function RecallQuestions(props){
                         answer={answer}
                         index={index}
                         callback={callback}
+                        iconsCallback={iconsCallback}
                     />
                 )
             })}

@@ -88,7 +88,6 @@ header button{
     font-size: 16px;
     line-height: 19px;
     margin-left: 10px;
-    color: #333333;
 }
 
 .front button{
@@ -237,10 +236,25 @@ footer h1{
     font-family: 'Recursive';
     font-style: normal;
     font-weight: 400;
-    font-size: 32px;
+    font-size: 120%;
     line-height: 38px;
     color: #333333;
 
+}
+
+.incorrect{
+    text-decoration-line: line-through;
+    color: #FF3030;
+}
+
+.almost-correct{
+    text-decoration-line: line-through;
+    color: #FF922E;
+}
+
+.correct{
+    text-decoration-line: line-through;
+    color: #2FBE34;
 }
 
 .hidden{

@@ -22,7 +22,8 @@ function comparador(){
     return Math.random() - 0.5;
 }
 
-export default function RecallQuestions(){
+export default function RecallQuestions(props){
+    const { callback } = props
     if(zapShuffle.length < 8){
         shuffle();
     }
@@ -40,9 +41,9 @@ export default function RecallQuestions(){
             <div className={`back ${(sinal[1] === index)?((sinal[0] === 'back')?'':'hidden'):'hidden'}`}>
                 <h1>{zap.answer}</h1>
                 <div className="buttons">
-                    <button className="amnesia">Não lembrei</button>
-                    <button className="almost">Quase não lembrei</button>
-                    <button className="zap">Zap!</button>
+                    <button onClick={() => callback(1)} className="amnesia">Não lembrei</button>
+                    <button onClick={() => callback(1)} className="almost">Quase não lembrei</button>
+                    <button onClick={() => callback(1)} className="zap">Zap!</button>
                 </div>
             </div>
         </div>

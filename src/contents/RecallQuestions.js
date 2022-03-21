@@ -26,12 +26,13 @@ function Questions(props){
     const { index, question, answer, callback } = props;
     const [selected, setSelected] = React.useState('front');
     const [result, setResult] = React.useState('');
+    const [icon, setIcon] = React.useState('play-outline');
     
     return(
         <div className='question'>
             <div className={`front ${(selected === 'front')?'':'hidden'} ${result}`}>
                 <h1>{`Pergunta ${index+1}`}</h1>
-                <button onClick={() => setSelected('open')}><img src='assets/Vector.png' /></button>
+                <button onClick={() => setSelected('open')}><ion-icon name={icon}></ion-icon></button>
             </div>
             <div className={`open ${(selected === 'open')?'':'hidden'}`}>
                 <h1>{question}</h1>
@@ -41,14 +42,17 @@ function Questions(props){
                 <h1>{answer}</h1>
                 <div className='buttons'>
                     <button className='amnesia' onClick={() => {
+                        setIcon('close-circle')
                         setSelected('front')
                         setResult('incorrect')
                         callback(1)}}>Não lembrei</button>
                     <button className='almost' onClick={() => {
+                        setIcon('help-circle')
                         setSelected('front')
                         setResult('almost-correct')
                         callback(1)}}>Quase não lembrei</button>
                     <button className='zap' onClick={() => {
+                        setIcon('checkmark-circle')
                         setSelected('front')
                         setResult('correct')
                         callback(1)}}>Zap!</button>

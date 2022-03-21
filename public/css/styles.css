@@ -324,6 +324,39 @@ header button{
     color: #2FBE34;
 }
 
+.result-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.result-logo img{
+    width: 23px;
+    height: 23px;
+    margin-right: 10px;
+}
+
+.result-logo h1{
+    height: 22px;
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.result p{
+    width: 222px;
+    height: 44px;
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+}
+
 .hidden{
     display: none;
 }

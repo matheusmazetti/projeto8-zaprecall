@@ -24,18 +24,19 @@ function comparador(){
 
 function Questions(props){
     const { index, question, answer} = props;
+    const [selected, setSelected] = React.useState('front');
     
     return(
         <div className='question'>
-            <div className='front'>
+            <div className={`front ${(selected === 'front')?'':'hidden'}`}>
                 <h1>{`Pergunta ${index+1}`}</h1>
-                <button><img src='assets/Vector.png' /></button>
+                <button onClick={() => setSelected('open')}><img src='assets/Vector.png' /></button>
             </div>
-            <div className='open'>
+            <div className={`open ${(selected === 'open')?'':'hidden'}`}>
                 <h1>{question}</h1>
-                <button><img src="assets/setinha.png"/></button>
+                <button onClick={() => setSelected('back')}><img src="assets/setinha.png"/></button>
             </div>
-            <div className='back'>
+            <div className={`back ${(selected === 'back')?'':'hidden'}`}>
                 <h1>{answer}</h1>
                 <div className='buttons'>
                     <button className='amnesia'>Não lembrei</button>

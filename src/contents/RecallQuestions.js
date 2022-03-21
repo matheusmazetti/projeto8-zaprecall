@@ -28,9 +28,10 @@ export default function RecallQuestions(props){
         shuffle();
     }
     const [sinal, setSinal] = React.useState([]);
+    const [classe, setClasse] = React.useState([]);
     let questions = zapShuffle.map((zap, index) => 
         <div className="question" >
-            <div className={`front ${(sinal[1] === index)?((sinal[0] === 'front')?'':'hidden'):''}`}>
+            <div className={`front ${(sinal[1] === index)?((sinal[0] === 'front')?'':'hidden'):''} ${(classe[1] === index)? classe[0]:''}`}>
                 <h1>{`Pergunta ${index + 1}`}</h1>
                 <button onClick={() => setSinal(['open', index])}><img src="assets/Vector.png"/></button>
             </div>
@@ -38,12 +39,24 @@ export default function RecallQuestions(props){
                 <h1>{zap.question}</h1>
                 <button onClick={() => setSinal(['back', index])}><img src="assets/setinha.png"/></button>
             </div>
-            <div className={`back ${(sinal[1] === index)?((sinal[0] === 'back')?'':'hidden'):'hidden'}`}>
+            <div className={`back ${(sinal[1] === index && !(classe[1] === index))?((sinal[0] === 'back')?'':'hidden'):'hidden'}`}>
                 <h1>{zap.answer}</h1>
                 <div className="buttons">
-                    <button onClick={() => callback(1)} className="amnesia">Não lembrei</button>
-                    <button onClick={() => callback(1)} className="almost">Quase não lembrei</button>
-                    <button onClick={() => callback(1)} className="zap">Zap!</button>
+                    <button onClick={() => {
+                        setSinal(['front', index]);
+                        setClasse(['incorrect', index]);
+                        callback(1);
+                        }} className="amnesia">Não lembrei</button>
+                    <button onClick={() => {
+                        setSinal(['front', index]);
+                        setClasse(['almost-correct', index]);
+                        callback(1);
+                        }} className="almost">Quase não lembrei</button>
+                    <button onClick={() => {
+                        setSinal(['front', index]);
+                        setClasse(['correct', index]);
+                        callback(1);
+                        }} className="zap">Zap!</button>
                 </div>
             </div>
         </div>

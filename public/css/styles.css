@@ -243,16 +243,19 @@ footer h1{
 }
 
 .incorrect{
+    pointer-events: none;
     text-decoration-line: line-through;
     color: #FF3030;
 }
 
 .almost-correct{
+    pointer-events: none;
     text-decoration-line: line-through;
     color: #FF922E;
 }
 
 .correct{
+    pointer-events: none;
     text-decoration-line: line-through;
     color: #2FBE34;
 }

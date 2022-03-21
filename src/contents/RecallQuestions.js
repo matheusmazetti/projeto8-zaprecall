@@ -23,12 +23,13 @@ function comparador(){
 }
 
 function Questions(props){
-    const { index, question, answer} = props;
+    const { index, question, answer, callback } = props;
     const [selected, setSelected] = React.useState('front');
+    const [result, setResult] = React.useState('');
     
     return(
         <div className='question'>
-            <div className={`front ${(selected === 'front')?'':'hidden'}`}>
+            <div className={`front ${(selected === 'front')?'':'hidden'} ${result}`}>
                 <h1>{`Pergunta ${index+1}`}</h1>
                 <button onClick={() => setSelected('open')}><img src='assets/Vector.png' /></button>
             </div>
@@ -39,9 +40,18 @@ function Questions(props){
             <div className={`back ${(selected === 'back')?'':'hidden'}`}>
                 <h1>{answer}</h1>
                 <div className='buttons'>
-                    <button className='amnesia'>Não lembrei</button>
-                    <button className='almost'>Quase não lembrei</button>
-                    <button className='zap'>Zap!</button>
+                    <button className='amnesia' onClick={() => {
+                        setSelected('front')
+                        setResult('incorrect')
+                        callback(1)}}>Não lembrei</button>
+                    <button className='almost' onClick={() => {
+                        setSelected('front')
+                        setResult('almost-correct')
+                        callback(1)}}>Quase não lembrei</button>
+                    <button className='zap' onClick={() => {
+                        setSelected('front')
+                        setResult('correct')
+                        callback(1)}}>Zap!</button>
                 </div>
             </div>
         </div>
@@ -65,6 +75,7 @@ export default function RecallQuestions(props){
                         question={question}
                         answer={answer}
                         index={index}
+                        callback={callback}
                     />
                 )
             })}
